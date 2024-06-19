@@ -11,15 +11,15 @@ public class FelineTest {
     public void testEatMeat() throws Exception {
         Feline feline = new Feline();
         List<String> food = feline.eatMeat();
-        assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
+        assertTrue(food.contains("Р–РёРІРѕС‚РЅС‹Рµ"));
+        assertTrue(food.contains("РџС‚РёС†С‹"));
+        assertTrue(food.contains("Р С‹Р±Р°"));
     }
 
     @Test
     public void testGetFamily() {
         Feline feline = new Feline();
-        assertEquals("Кошачьи", feline.getFamily());
+        assertEquals("РљРѕС€Р°С‡СЊРё", feline.getFamily());
     }
 
     @Test

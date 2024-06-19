@@ -11,18 +11,18 @@ public class CatTest {
     @Test
     public void testGetSound() {
         Cat cat = new Cat(new Feline());
-        assertEquals("Мяу", cat.getSound());
+        assertEquals("РњСЏСѓ", cat.getSound());
     }
 
     @Test
     public void testGetFood() throws Exception {
         Feline feline = Mockito.mock(Feline.class);
-        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Р–РёРІРѕС‚РЅС‹Рµ", "РџС‚РёС†С‹", "Р С‹Р±Р°"));
 
         Cat cat = new Cat(feline);
         List<String> food = cat.getFood();
-        assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
+        assertTrue(food.contains("Р–РёРІРѕС‚РЅС‹Рµ"));
+        assertTrue(food.contains("РџС‚РёС†С‹"));
+        assertTrue(food.contains("Р С‹Р±Р°"));
     }
 }

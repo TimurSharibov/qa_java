@@ -13,31 +13,31 @@ public class LionTest {
         Feline feline = Mockito.mock(Feline.class);
         Mockito.when(feline.getKittens()).thenReturn(2);
 
-        Lion lion = new Lion("Самец", feline);
+        Lion lion = new Lion("РЎР°РјРµС†", feline);
         assertEquals(2, lion.getKittens());
     }
 
     @Test
     public void testDoesHaveManeForMale() throws Exception {
-        Lion lion = new Lion("Самец", new Feline());
+        Lion lion = new Lion("РЎР°РјРµС†", new Feline());
         assertTrue(lion.doesHaveMane());
     }
 
     @Test
     public void testDoesHaveManeForFemale() throws Exception {
-        Lion lion = new Lion("Самка", new Feline());
+        Lion lion = new Lion("РЎР°РјРєР°", new Feline());
         assertTrue(!lion.doesHaveMane());
     }
 
     @Test
     public void testGetFood() throws Exception {
         Feline feline = Mockito.mock(Feline.class);
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("РҐРёС‰РЅРёРє")).thenReturn(List.of("Р–РёРІРѕС‚РЅС‹Рµ", "РџС‚РёС†С‹", "Р С‹Р±Р°"));
 
-        Lion lion = new Lion("Самец", feline);
+        Lion lion = new Lion("РЎР°РјРµС†", feline);
         List<String> food = lion.getFood();
-        assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
+        assertTrue(food.contains("Р–РёРІРѕС‚РЅС‹Рµ"));
+        assertTrue(food.contains("РџС‚РёС†С‹"));
+        assertTrue(food.contains("Р С‹Р±Р°"));
     }
 }

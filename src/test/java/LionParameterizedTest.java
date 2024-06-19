@@ -23,8 +23,8 @@ public class LionParameterizedTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"Ñàìåö", true},
-                {"Ñàìêà", false}
+                {"Ğ¡Ğ°Ğ¼ĞµÑ†", true},
+                {"Ğ¡Ğ°Ğ¼ĞºĞ°", false}
         });
     }
 

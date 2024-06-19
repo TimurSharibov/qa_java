@@ -12,15 +12,15 @@ public class AlexLionTest {
     public void testGetFriends() throws Exception {
         AlexLion alexLion = new AlexLion(new Feline());
         List<String> friends = alexLion.getFriends();
-        assertTrue(friends.contains("Марти"));
-        assertTrue(friends.contains("Глория"));
-        assertTrue(friends.contains("Мелман"));
+        assertTrue(friends.contains("РњР°СЂС‚Рё"));
+        assertTrue(friends.contains("Р“Р»РѕСЂРёСЏ"));
+        assertTrue(friends.contains("РњРµР»РјР°РЅ"));
     }
 
     @Test
     public void testGetPlaceOfLiving() throws Exception {
         AlexLion alexLion = new AlexLion(new Feline());
-        assertEquals("Нью-Йоркский зоопарк", alexLion.getPlaceOfLiving());
+        assertEquals("РќСЊСЋ-Р™РѕСЂРєСЃРєРёР№ Р·РѕРѕРїР°СЂРє", alexLion.getPlaceOfLiving());
     }
 
     @Test
