@@ -1,10 +1,11 @@
-package com.example;
-
+import com.example.AlexLion;
+import com.example.Feline;
 import org.junit.Test;
 import org.mockito.Mockito;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 public class AlexLionTest {
 
