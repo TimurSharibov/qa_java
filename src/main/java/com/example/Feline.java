@@ -2,16 +2,14 @@ package com.example;
 
 import java.util.List;
 
-public class Feline extends Animal implements Predator {
+public class Feline {
 
-    @Override
-    public List<String> eatMeat() throws Exception {
-        return getFood("Хищник");
-    }
-
-    @Override
-    public String getFamily() {
-        return "Кошачьи";
+    public List<String> getFood(String animalKind) throws Exception {
+        if ("Хищник".equals(animalKind)) {
+            return List.of("Животные", "Птицы", "Рыба");
+        } else {
+            throw new Exception("Неизвестный вид животного, используйте значение Хищник");
+        }
     }
 
     public int getKittens() {
@@ -20,5 +18,9 @@ public class Feline extends Animal implements Predator {
 
     public int getKittens(int kittensCount) {
         return kittensCount;
+    }
+
+    public String getFamily() {
+        return "Кошачьи";
     }
 }

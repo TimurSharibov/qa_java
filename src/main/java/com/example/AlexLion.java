@@ -5,15 +5,15 @@ import java.util.List;
 public class AlexLion extends Lion {
 
     public AlexLion(Feline feline) throws Exception {
-        super("Самец", feline);
+        super("РЎР°РјРµС†", feline);
     }
 
     public List<String> getFriends() {
-        return List.of("Марти", "Глория", "Мелман");
+        return List.of("РњР°СЂС‚Рё", "Р“Р»РѕСЂРёСЏ", "РњРµР»РјР°РЅ");
     }
 
     public String getPlaceOfLiving() {
-        return "Нью-Йоркский зоопарк";
+        return "РќСЊСЋ-Р™РѕСЂРєСЃРєРёР№ Р·РѕРѕРїР°СЂРє";
     }
 
     @Override

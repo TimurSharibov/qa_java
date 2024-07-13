@@ -1,28 +1,34 @@
 import com.example.Cat;
 import com.example.Feline;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class CatTest {
 
-    private Feline feline = new Feline();
+    private final Feline feline = new Feline();
 
     @Test
     public void testGetFoodContainsAnimals() throws Exception {
         Cat cat = new Cat(feline);
         List<String> food = cat.getFood();
-        assertTrue(food.contains("Животные"));
+        System.out.println("Food list in test: " + food);  // Добавьте этот вывод для отладки
+        assertTrue("The food list does not contain 'Животные'", food.contains("Животные"));
     }
 
     @Test
     public void testGetFoodSize() throws Exception {
         Cat cat = new Cat(feline);
         List<String> food = cat.getFood();
-        assertEquals(3, food.size());  // Предположим, что кошка ест три типа пищи
+        assertEquals(3, food.size());
+    }
+
+    @Test
+    public void testGetSound() {
+        Cat cat = new Cat(feline);
+        assertEquals("Мяу", cat.getSound());
     }
 }
