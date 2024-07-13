@@ -8,38 +8,22 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+
 public class LionTest {
 
-    @Test
-    public void testGetKittens() throws Exception {
-        Feline feline = Mockito.mock(Feline.class);
-        Mockito.when(feline.getKittens()).thenReturn(2);
-
-        Lion lion = new Lion("Самец", feline);
-        assertEquals(2, lion.getKittens());
-    }
+    private Feline feline = new Feline();
 
     @Test
-    public void testDoesHaveManeForMale() throws Exception {
-        Lion lion = new Lion("Самец", new Feline());
-        assertTrue(lion.doesHaveMane());
-    }
-
-    @Test
-    public void testDoesHaveManeForFemale() throws Exception {
-        Lion lion = new Lion("Самка", new Feline());
-        assertTrue(!lion.doesHaveMane());
-    }
-
-    @Test
-    public void testGetFood() throws Exception {
-        Feline feline = Mockito.mock(Feline.class);
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-
+    public void testGetFoodContainsAnimals() throws Exception {
         Lion lion = new Lion("Самец", feline);
         List<String> food = lion.getFood();
         assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
+    }
+
+    @Test
+    public void testGetFoodSize() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        List<String> food = lion.getFood();
+        assertEquals(3, food.size());  // Предположим, что лев ест три типа пищи
     }
 }

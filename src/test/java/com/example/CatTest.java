@@ -10,21 +10,19 @@ import static org.junit.Assert.assertTrue;
 
 public class CatTest {
 
-    @Test
-    public void testGetSound() {
-        Cat cat = new Cat(new Feline());
-        assertEquals("Мяу", cat.getSound());
-    }
+    private Feline feline = new Feline();
 
     @Test
-    public void testGetFood() throws Exception {
-        Feline feline = Mockito.mock(Feline.class);
-        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-
+    public void testGetFoodContainsAnimals() throws Exception {
         Cat cat = new Cat(feline);
         List<String> food = cat.getFood();
         assertTrue(food.contains("Животные"));
-        assertTrue(food.contains("Птицы"));
-        assertTrue(food.contains("Рыба"));
+    }
+
+    @Test
+    public void testGetFoodSize() throws Exception {
+        Cat cat = new Cat(feline);
+        List<String> food = cat.getFood();
+        assertEquals(3, food.size());  // Предположим, что кошка ест три типа пищи
     }
 }

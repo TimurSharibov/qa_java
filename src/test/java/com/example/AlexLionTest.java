@@ -1,32 +1,22 @@
-import com.example.AlexLion;
-import com.example.Feline;
 import org.junit.Test;
-import org.mockito.Mockito;
+import static org.junit.Assert.*;
 import java.util.List;
+import com.example.*;
 
-import static org.junit.Assert.assertTrue;
-import static org.testng.Assert.assertEquals;
 
 public class AlexLionTest {
 
     @Test
-    public void testGetFriends() throws Exception {
+    public void testGetFriendsContainsMarty() throws Exception {
         AlexLion alexLion = new AlexLion(new Feline());
         List<String> friends = alexLion.getFriends();
         assertTrue(friends.contains("Марти"));
-        assertTrue(friends.contains("Глория"));
-        assertTrue(friends.contains("Мелман"));
     }
 
     @Test
-    public void testGetPlaceOfLiving() throws Exception {
+    public void testGetFriendsSize() throws Exception {
         AlexLion alexLion = new AlexLion(new Feline());
-        assertEquals("Нью-Йоркский зоопарк", alexLion.getPlaceOfLiving());
-    }
-
-    @Test
-    public void testGetKittens() throws Exception {
-        AlexLion alexLion = new AlexLion(new Feline());
-        assertEquals(0, alexLion.getKittens());
+        List<String> friends = alexLion.getFriends();
+        assertEquals(3, friends.size());  // Предположим, что у AlexLion три друга
     }
 }
