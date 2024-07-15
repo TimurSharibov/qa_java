@@ -1,3 +1,5 @@
+package com.example;
+
 import com.example.AlexLion;
 import com.example.Feline;
 import org.junit.Test;

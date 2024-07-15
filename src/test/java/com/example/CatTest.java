@@ -1,11 +1,11 @@
-import com.example.Cat;
-import com.example.Feline;
+package com.example;
+
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CatTest {
 
@@ -15,8 +15,8 @@ public class CatTest {
     public void testGetFoodContainsAnimals() throws Exception {
         Cat cat = new Cat(feline);
         List<String> food = cat.getFood();
-        System.out.println("Food list in test: " + food);  // Добавьте этот вывод для отладки
-        assertTrue("The food list does not contain 'Животные'", food.contains("Животные"));
+        System.out.println("Список еды в тесте: " + food);  // Добавьте этот вывод для отладки
+        assertTrue("Список еды не содержит 'Животные'", food.contains("Животные"));
     }
 
     @Test
