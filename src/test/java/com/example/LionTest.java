@@ -12,17 +12,12 @@ import static org.mockito.Mockito.when;
 public class LionTest {
 
     @Test
-    public void testGetFood() {
+    public void testGetFood() throws Exception {
         Feline mockFeline = mock(Feline.class);
-        Lion lion = null;
-        try {
-            lion = new Lion("Самец", mockFeline);
-            List<String> food = List.of("Животные", "Птицы", "Рыба");
-            when(mockFeline.getFood("Хищник")).thenReturn(food);
-            assertEquals(food, lion.getFood());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Lion lion = new Lion("Самец", mockFeline);
+        List<String> food = List.of("Животные", "Птицы", "Рыба");
+        when(mockFeline.getFood("Хищник")).thenReturn(food);
+        assertEquals(food, lion.getFood());
     }
 
     @Test
@@ -42,9 +37,15 @@ public class LionTest {
     @Test
     public void testGetKittens() throws Exception {
         Feline mockFeline = mock(Feline.class);
-        when(mockFeline.getKittens()).thenReturn(3); // Пример возвращаемого значения для mockFeline.getKittens()
+        when(mockFeline.getKittens()).thenReturn(3);
 
         Lion lion = new Lion("Самец", mockFeline);
         assertEquals(3, lion.getKittens());
+    }
+
+    @Test(expected = Exception.class)
+    public void testInvalidSexThrowsException() throws Exception {
+        Feline mockFeline = mock(Feline.class);
+        new Lion("InvalidSex", mockFeline);
     }
 }
