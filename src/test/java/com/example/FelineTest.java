@@ -11,12 +11,32 @@ import static org.junit.Assert.fail;
 public class FelineTest {
 
     @Test
-    public void testGetFoodPredator() {
+    public void testGetFoodPredatorContainsAnimals() {
         Feline feline = new Feline();
         try {
             List<String> food = feline.getFood("Хищник");
             assertTrue(food.contains("Животные"));
+        } catch (Exception e) {
+            fail("Unexpected exception thrown");
+        }
+    }
+
+    @Test
+    public void testGetFoodPredatorContainsBirds() {
+        Feline feline = new Feline();
+        try {
+            List<String> food = feline.getFood("Хищник");
             assertTrue(food.contains("Птицы"));
+        } catch (Exception e) {
+            fail("Unexpected exception thrown");
+        }
+    }
+
+    @Test
+    public void testGetFoodPredatorContainsFish() {
+        Feline feline = new Feline();
+        try {
+            List<String> food = feline.getFood("Хищник");
             assertTrue(food.contains("Рыба"));
         } catch (Exception e) {
             fail("Unexpected exception thrown");
@@ -24,7 +44,7 @@ public class FelineTest {
     }
 
     @Test
-    public void testGetFoodUnknownType() {
+    public void testGetFoodUnknownTypeThrowsException() {
         Feline feline = new Feline();
         try {
             feline.getFood("Травоядное");

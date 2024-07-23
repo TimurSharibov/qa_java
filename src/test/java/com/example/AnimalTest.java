@@ -11,11 +11,21 @@ import static org.junit.Assert.fail;
 public class AnimalTest {
 
     @Test
-    public void testGetFoodHerbivore() {
+    public void testGetFoodHerbivoreContainsGrass() {
         Animal animal = new Animal();
         try {
             List<String> food = animal.getFood("Травоядное");
             assertTrue(food.contains("Трава"));
+        } catch (Exception e) {
+            fail("Unexpected exception thrown");
+        }
+    }
+
+    @Test
+    public void testGetFoodHerbivoreContainsVariousPlants() {
+        Animal animal = new Animal();
+        try {
+            List<String> food = animal.getFood("Травоядное");
             assertTrue(food.contains("Различные растения"));
         } catch (Exception e) {
             fail("Unexpected exception thrown");
@@ -23,12 +33,32 @@ public class AnimalTest {
     }
 
     @Test
-    public void testGetFoodPredator() {
+    public void testGetFoodPredatorContainsAnimals() {
         Animal animal = new Animal();
         try {
             List<String> food = animal.getFood("Хищник");
             assertTrue(food.contains("Животные"));
+        } catch (Exception e) {
+            fail("Unexpected exception thrown");
+        }
+    }
+
+    @Test
+    public void testGetFoodPredatorContainsBirds() {
+        Animal animal = new Animal();
+        try {
+            List<String> food = animal.getFood("Хищник");
             assertTrue(food.contains("Птицы"));
+        } catch (Exception e) {
+            fail("Unexpected exception thrown");
+        }
+    }
+
+    @Test
+    public void testGetFoodPredatorContainsFish() {
+        Animal animal = new Animal();
+        try {
+            List<String> food = animal.getFood("Хищник");
             assertTrue(food.contains("Рыба"));
         } catch (Exception e) {
             fail("Unexpected exception thrown");
@@ -36,7 +66,7 @@ public class AnimalTest {
     }
 
     @Test
-    public void testGetFoodUnknownType() {
+    public void testGetFoodUnknownTypeThrowsException() {
         Animal animal = new Animal();
         try {
             animal.getFood("Неизвестный тип");
